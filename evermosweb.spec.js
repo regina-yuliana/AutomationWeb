@@ -64,7 +64,7 @@ test('FAILED-TEST', async ({ page }) => {
   await expect(page).toHaveURL('https://staging.evermosa2z.com/order');
   
   await page.getByRole('link', { name: 'Lanjut ke Checkout' }).click();
-  await expect(page).toHaveURL('https://staging.evermosa2z.com/order/checkout');
+  await expect(page.locator('[class="appLayoutHeading__title"]')).toContainText('Checkout');
   
   await page.getByRole('link', { name: 'Proses Sekarang' }).click();
   
